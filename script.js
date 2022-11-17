@@ -1,12 +1,14 @@
 var form = document.getElementById('form')
-var name = document.getElementById('name')
-var pref = document.getElementById('pref')
+
 var error = document.getElementById('error')
 
 form.addEventListener('submit', function(event){
- event.preventDefault()
- document.getElementByID('text').innerHTML = name.innerText
- flag = 0
+    event.preventDefault()
+    var name = document.getElementById('name').value
+    var pref = document.getElementById('pref').value
+
+    document.getElementByID('text').innerHTML = name
+    flag = 0
 
  let message = []
  /*
