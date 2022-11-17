@@ -160,6 +160,7 @@
     </style>
 </head>
 <body>
+<div id="error"></div>
 <form id="form">
     <h1>Vorauswahl Wichteln</h1>
     <h4>DEIN Name</h4>
@@ -173,7 +174,7 @@
     </select>
     <h4>Bevorzugte Person</h4>
     <select id="pref" required>
-        <option value="">Habe keine</option>
+        <option value="0" selected>Habe keine</option>
         <option value="1">Jonas</option>
         <option value="2">Christoph</option>
         <option value="3">Magdalena</option>
@@ -181,18 +182,22 @@
         <option value="5">Guenter</option>
     </select><br><br>
     <button type="submit" >Absenden</button>
-    <h4 id="desc"> Bitte nur einmal senden </h4>
 </form>
 </div>
 </body>
 <script>
    var form = document.getElementbyID('form')
+   var name = document.getElementbyID('name')
+   var pref = document.getElementbyID('pref')
 
    form.addEventListener('submit', function(event){
+    let messages = []
+    messages.push('Hi my name is')
     event.preventDefault()
-    var name = document.getElementbyID('name')
-    var pref = document.getElementbyID('pref')
-    document.getElementbyID('desc').innerHTML = "Successfull Transmition"
+    error.Element.innerText = messages.join(', ')
+
+    //document.getElementbyID('text').innerHTML = "Successfull Transmition";
+    //messages.push("Did it work?")
    })
 
 </script>
